@@ -1,3 +1,5 @@
+"use strict";
+
 // Select elements
 const saveBtn = document.getElementById("save");
 const searchBtn = document.getElementById("search");
