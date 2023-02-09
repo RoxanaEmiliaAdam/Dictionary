@@ -10,10 +10,15 @@ let listArr = [];
 saveBtn.addEventListener("click", function () {
   const inputSave = document.getElementById("user_input_save").value;
 
-  let splittedValues = inputSave.split(",");
+  const splittedValues = inputSave.split(",");
 
   for (let i = 0; i < splittedValues.length; i++) {
-    listArr.push(splittedValues[i].toLowerCase());
+    const value = splittedValues[i].toLowerCase();
+    if (!listArr.includes(value)) {
+      listArr.push(value);
+    } else {
+      alert(`This word "${value}" is already in the list.`);
+    }
   }
 
   listContent.textContent = listArr.sort().join(", ");
@@ -21,8 +26,11 @@ saveBtn.addEventListener("click", function () {
 
 // SEARCH button
 searchBtn.addEventListener("click", function () {
-  const inputSearch = document.getElementById("user_input_search").value;
-  listArr.includes(inputSearch.toLowerCase())
-    ? alert("This word is already in the list.")
-    : alert("This word is not in the list yet.");
+  const inputSearch = document
+    .getElementById("user_input_search")
+    .value.toLowerCase();
+
+  listArr.includes(inputSearch)
+    ? alert(`This word "${inputSearch}" is already in the list.`)
+    : alert(`This word "${inputSearch}" is not in the list yet.`);
 });
