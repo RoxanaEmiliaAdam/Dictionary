@@ -4,7 +4,12 @@
 const saveBtn = document.getElementById("save");
 const searchBtn = document.getElementById("search");
 const listContent = document.getElementById("list_content");
+const text = document.getElementById("message");
 let listArr = [];
+
+const displayMessage = function (message) {
+  text.textContent = message;
+};
 
 // SAVE button
 saveBtn.addEventListener("click", function () {
@@ -17,7 +22,7 @@ saveBtn.addEventListener("click", function () {
     if (!listArr.includes(value)) {
       listArr.push(value);
     } else {
-      alert(`This word "${value}" is already in the list.`);
+      displayMessage(`This word "${value}" is already in the list.`);
     }
   }
 
@@ -31,6 +36,6 @@ searchBtn.addEventListener("click", function () {
     .value.toLowerCase();
 
   listArr.includes(inputSearch)
-    ? alert(`This word "${inputSearch}" is already in the list.`)
-    : alert(`This word "${inputSearch}" is not in the list yet.`);
+    ? displayMessage(`This word "${inputSearch}" is already in the list.`)
+    : displayMessage(`This word "${inputSearch}" is not in the list yet.`);
 });

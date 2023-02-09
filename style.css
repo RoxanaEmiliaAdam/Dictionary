@@ -7,13 +7,20 @@ h2 {
 em {
   color: red;
 }
-#user_input_save {
-  margin-left: 250px;
+div {
+  text-align: center;
 }
-#user_input_search {
-  margin-left: 250px;
+
+#list {
+  color: green;
 }
 #list_content {
   font-size: 20px;
   font-style: italic;
+  color: black;
+}
+#message {
+  color: blue;
+  font-size: 20px;
+  text-align: center;
 }
